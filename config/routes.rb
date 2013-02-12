@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Writesomething::Application.routes.draw do  
   
   get "cadavres/list_for_current_user"
@@ -15,6 +16,16 @@ Writesomething::Application.routes.draw do
   match 'logout' => 'user_sessions#destroy', :as => :logout
   
   root :to => 'pages#home'
+=======
+Writesomething::Application.routes.draw do
+
+  root :to => 'users#index'
+  resources :user_sessions
+  resources :users
+    
+  match 'login' => 'user_sessions#new', :as => :login
+  match 'logout' => 'user_sessions#destroy', :as => :logout
+>>>>>>> initial commit with user auth
 
 
   # The priority is based upon order of creation:

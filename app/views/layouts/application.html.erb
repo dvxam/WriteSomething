@@ -8,19 +8,32 @@
   </head>
   <body>
     
+<<<<<<< HEAD
   <nav>
     <% if current_user %>
+=======
+  <div id="nav">
+    <% if current_user %>
+      <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
+>>>>>>> initial commit with user auth
       <%= link_to "Logout", :logout %>
     <% else %>
       <%= link_to "Register", new_user_path %> |
       <%= link_to "Login", :login %>
     <% end %>
+<<<<<<< HEAD
   </nav>
+=======
+  </div>
+>>>>>>> initial commit with user auth
   <div>
     <p id="notice"><%= notice %></p>
     <p id="alert"><%= alert %></p>
   </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> initial commit with user auth
   <%= yield %>
     
   </body>

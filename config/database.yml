@@ -19,7 +19,12 @@ test:
   timeout: 5000
 
 production:
+<<<<<<< HEAD
   adapter: pg
   database: db/production.pg
+=======
+  adapter: sqlite3
+  database: db/production.sqlite3
+>>>>>>> initial commit with user auth
   pool: 5
   timeout: 5000

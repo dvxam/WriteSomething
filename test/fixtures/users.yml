@@ -5,9 +5,19 @@ one:
   email: MyString
   crypted_password: MyString
   salt: MyString
+<<<<<<< HEAD
+=======
+  avatar: MyString
+  score: 
+>>>>>>> initial commit with user auth
 
 two:
   username: MyString
   email: MyString
   crypted_password: MyString
   salt: MyString
+<<<<<<< HEAD
+=======
+  avatar: MyString
+  score: 
+>>>>>>> initial commit with user auth
