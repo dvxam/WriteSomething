@@ -1,0 +1,11 @@
+<h1><%= @cadavre.title %></h1>
+<%  if @cadavre.sentences.length != 0 %>
+	<h2>Dernière phrase :</h2>
+	<p><%= @cadavre.sentences.last.content %></p>
+<% end %>
+
+<% @sentence = Sentence.new %>
+<%= render 'sentences/form' %>
+
+<%= link_to 'Show', @cadavre %> |
+<%= link_to 'Back', cadavres_path %>

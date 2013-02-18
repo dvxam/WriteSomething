@@ -1,0 +1,40 @@
+<% if @cadavre.nb_max_of_sentences <= @cadavre.sentences.length %>
+	<h1><%= @cadavre.title %></h1>
+
+	<p>
+		<% @cadavre.sentences.each do |sentence| %>
+			<%= link_to sentence.content + ". ", sentence.user  %>
+		<% end %>
+	</p>
+
+	<h2>Les personnes qui ont participés : </h2>
+	<ul>
+	  <% @users.each do |user| %>
+			<li><%= user.username %></li>
+		<% end %>
+	</ul>
+	
+	<%= link_to 'Retour', {:controller => 'cadavres', :action => 'list_for_current_user'}%>
+	
+<% else %>
+
+	<h1><%= @cadavre.title %></h1>
+	
+	<h2>Dernière phrase : </h2>
+	<% if @cadavre.sentences.length == 0 %>
+		<p>Pas de phrase. Débutez votre cadavre!</p>
+	<% else %>
+		<p><%= @cadavre.sentences.last.content %></p>
+		<h2>Dernière personnes à avoir écrit : </h2>
+		<ul>
+
+		  <% @users.each do |user| %>
+				<li><%= user.username %></li>
+			<% end %>
+		</ul>
+	<% end %>
+	
+	<%= link_to 'Retour', {:controller => 'cadavres', :action => 'list_for_current_user'}%> |
+	<%= link_to 'Continuer', edit_cadavre_path(@cadavre) %>		
+
+<% end %>
