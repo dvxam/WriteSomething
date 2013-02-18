@@ -1,11 +1,27 @@
 body {
-  background-color: grey;
+  background: url(bg.jpg) top repeat-y;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+  width: 60%;
+  margin: auto;
+}
+article {
+  background: #fff;
+  padding: 20px;
+  border-bottom: 4px solid #ebebeb;
 }
 
+nav {
+
+  padding: 5px;
+  height: 35px;
+  margin: 5px;
+  background: #000;
+
+
+}
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;

@@ -2,7 +2,19 @@
 # The default is nothing which will include only core features (password encryption, login/logout).
 # Available submodules are: :user_activation, :http_basic_auth, :remember_me,
 # :reset_password, :session_timeout, :brute_force_protection, :activity_logging, :external
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 Rails.application.config.sorcery.submodules = [:remember_me, :reset_password]
+=======
+Rails.application.config.sorcery.submodules = []
+>>>>>>> initial commit with user auth
+=======
+Rails.application.config.sorcery.submodules = [:remember_me]
+>>>>>>> remember me
+=======
+Rails.application.config.sorcery.submodules = [:remember_me, :external]
+>>>>>>> facebook connect
 
 # Here you can configure each submodule's features.
 Rails.application.config.sorcery.configure do |config|
@@ -81,7 +93,7 @@ Rails.application.config.sorcery.configure do |config|
   # What providers are supported by this app, i.e. [:twitter, :facebook, :github, :google, :liveid] .
   # Default: `[]`
   #
-  # config.external_providers =
+  config.external_providers =  [:facebook]
 
 
   # You can change it by your local ca_file. i.e. '/etc/pki/tls/certs/ca-bundle.crt'
@@ -110,11 +122,12 @@ Rails.application.config.sorcery.configure do |config|
   # config.twitter.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=twitter"
   # config.twitter.user_info_mapping = {:email => "screen_name"}
   #
-  # config.facebook.key = ""
-  # config.facebook.secret = ""
-  # config.facebook.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=facebook"
-  # config.facebook.user_info_mapping = {:email => "name"}
-  # config.facebook.access_permissions = ["email", "publish_stream"]
+  config.facebook.key = "345714928876485"
+  config.facebook.secret = "d785a51d5c6bac16a9f3bca01a2a205a"
+  config.facebook.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=facebook"
+  config.facebook.user_info_mapping = {:email => "email", :name => "name", :username => "username", :hometown => "hometown/name"}
+  config.facebook.scope = "email,offline_access,user_hometown,user_interests,user_likes" #etc
+  config.facebook.display = "popup"
   #
   # config.github.key = ""
   # config.github.secret = ""
@@ -296,7 +309,11 @@ Rails.application.config.sorcery.configure do |config|
     # mailer class. Needed.
     # Default: `nil`
     #
+<<<<<<< HEAD
     user.reset_password_mailer = UserMailer
+=======
+    # user.reset_password_mailer =
+>>>>>>> initial commit with user auth
 
 
     # reset password email method on your mailer class.
@@ -399,7 +416,7 @@ Rails.application.config.sorcery.configure do |config|
     # Class which holds the various external provider data for this user.
     # Default: `nil`
     #
-    # user.authentications_class =
+    user.authentications_class = Authentication
 
 
     # User's identifier in authentications class.

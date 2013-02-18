@@ -1,11 +1,18 @@
 class UserSessionsController < ApplicationController
+<<<<<<< HEAD
+=======
   
+>>>>>>> 55ac9abb6d21265feb05f9791e7f7443386769fd
   skip_before_filter :require_login, :except => [:destroy]
   
   def new
     @user = User.new
   end
+<<<<<<< HEAD
+
+=======
   
+>>>>>>> 55ac9abb6d21265feb05f9791e7f7443386769fd
   def create
     respond_to do |format|
       if @user = login(params[:username], params[:password], params[:remember])
@@ -15,9 +22,15 @@ class UserSessionsController < ApplicationController
         format.html { flash.now[:alert] = "Login failed."; render :action => "new" }
         format.xml { render :xml => @user.errors, :status => :unprocessable_entity }
       end
+<<<<<<< HEAD
+    end 
+  end
+
+=======
     end
   end
     
+>>>>>>> 55ac9abb6d21265feb05f9791e7f7443386769fd
   def destroy
     logout
     redirect_to(:users, :notice => 'Logged out!')

@@ -7,22 +7,60 @@
       <%= csrf_meta_tags %>
   </head>
   <body>
+<<<<<<< HEAD
+<<<<<<< HEAD
     
+<<<<<<< HEAD
+=======
+    <header></header>
+>>>>>>> style
   <nav>
     <% if current_user %>
+<<<<<<< HEAD
+=======
+=======
+    <header></header>
+>>>>>>> style
+  <div id="nav">
+    <% if current_user %>
+      <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
+>>>>>>> initial commit with user auth
+      <%= link_to "Logout", :logout %>
+=======
       <%= link_to "Logout", :logout %> | 
   		Score <%= current_user.score%>
+>>>>>>> 55ac9abb6d21265feb05f9791e7f7443386769fd
     <% else %>
       <%= link_to "Register", new_user_path %> |
       <%= link_to "Login", :login %>
+      <%= link_to 'Login with Facebook', auth_at_provider_path(:provider => :facebook) %>
     <% end %>
+<<<<<<< HEAD
   </nav>
+<<<<<<< HEAD
+=======
+  </div>
+<<<<<<< HEAD
+>>>>>>> initial commit with user auth
+=======
+  <article>
+>>>>>>> style
+=======
+  <article>
+>>>>>>> style
   <div>
     <p id="notice"><%= notice %></p>
     <p id="alert"><%= alert %></p>
   </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> initial commit with user auth
   <%= yield %>
-    
+<<<<<<< HEAD
+    </article>
+=======
+ </article>   
+>>>>>>> style
   </body>
 </html>
