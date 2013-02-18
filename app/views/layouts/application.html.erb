@@ -7,11 +7,15 @@
       <%= csrf_meta_tags %>
   </head>
   <body>
+<<<<<<< HEAD
     
 <<<<<<< HEAD
   <nav>
     <% if current_user %>
 =======
+=======
+    <header></header>
+>>>>>>> style
   <div id="nav">
     <% if current_user %>
       <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
@@ -26,7 +30,11 @@
   </nav>
 =======
   </div>
+<<<<<<< HEAD
 >>>>>>> initial commit with user auth
+=======
+  <article>
+>>>>>>> style
   <div>
     <p id="notice"><%= notice %></p>
     <p id="alert"><%= alert %></p>
@@ -36,6 +44,6 @@
 =======
 >>>>>>> initial commit with user auth
   <%= yield %>
-    
+    </article>
   </body>
 </html>
