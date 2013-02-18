@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-<<<<<<< HEAD
 gem 'rails', '3.2.12'
 gem 'sorcery'
 
@@ -20,8 +19,6 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 end
-=======
-gem 'rails', '3.2.11'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -59,4 +56,3 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'ruby-debug'
->>>>>>> initial commit with user auth
