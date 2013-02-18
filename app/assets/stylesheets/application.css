@@ -100,8 +100,16 @@ div {
  *= require_tree .
  */
 
+<<<<<<< HEAD
 
 body {
 	background-color: red;
 }
 >>>>>>> 55ac9abb6d21265feb05f9791e7f7443386769fd
+=======
+header {
+	height: 260px;
+	background: url(logo.png) center no-repeat;
+	width: 100%;
+}
+>>>>>>> style
