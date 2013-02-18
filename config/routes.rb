@@ -1,6 +1,12 @@
 Writesomething::Application.routes.draw do
   
 
+  resources :sentences
+
+
+  resources :cadavres
+
+
   root :to => 'users#index'
   resources :user_sessions
   resources :users
