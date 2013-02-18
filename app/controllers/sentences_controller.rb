@@ -44,7 +44,7 @@ class SentencesController < ApplicationController
     @sentence.user = current_user
     @sentence.content = @sentence.content.capitalize
     @points = 10
-    current_user.update_attribute("score", current_user.score + @points)
+    current_user.add_to_score @points
 
     respond_to do |format|
       if @sentence.save

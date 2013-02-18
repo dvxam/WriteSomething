@@ -9,7 +9,9 @@
 		<% end %>	
 	</p>
 	<p>
+	<% if !cadavre.sentences.empty? %>
 	 <%= cadavre.sentences.last.content %>
+	<% end %>
 	</p>
 	<hr />
 <% end %>
