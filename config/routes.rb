@@ -1,19 +1,20 @@
-Writesomething::Application.routes.draw do
+Writesomething::Application.routes.draw do  
   
+  get "cadavres/list_for_current_user"
+  
+  get "pages/home"
+  match '/home',    :to => 'pages#home'
 
   resources :sentences
-
-
-  resources :cadavres
-
-
-  root :to => 'users#index'
+  resources :cadavres  
   resources :user_sessions
   resources :users
   resources :password_resets
 
   match 'login' => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
+  
+  root :to => 'pages#home'
 
 
   # The priority is based upon order of creation:
