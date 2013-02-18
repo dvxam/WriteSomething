@@ -10,6 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20130212114323) do
 
   create_table "users", :force => true do |t|
@@ -26,5 +27,48 @@ ActiveRecord::Schema.define(:version => 20130212114323) do
   end
 
   add_index "users", ["remember_me_token"], :name => "index_users_on_remember_me_token"
+=======
+ActiveRecord::Schema.define(:version => 20130218192124) do
+
+  create_table "cadavres", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "user_id"
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
+    t.integer  "nb_max_of_sentences", :default => 10
+  end
+
+  add_index "cadavres", ["user_id"], :name => "index_cadavres_on_user_id"
+
+  create_table "sentences", :force => true do |t|
+    t.string   "content"
+    t.integer  "user_id"
+    t.integer  "cadavre_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "sentences", ["cadavre_id"], :name => "index_sentences_on_cadavre_id"
+  add_index "sentences", ["user_id"], :name => "index_sentences_on_user_id"
+
+  create_table "users", :force => true do |t|
+    t.string   "username",                                       :null => false
+    t.string   "email"
+    t.string   "crypted_password"
+    t.string   "salt"
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
+    t.string   "remember_me_token"
+    t.datetime "remember_me_token_expires_at"
+    t.string   "reset_password_token"
+    t.datetime "reset_password_token_expires_at"
+    t.datetime "reset_password_email_sent_at"
+    t.integer  "score",                           :default => 0
+  end
+
+  add_index "users", ["remember_me_token"], :name => "index_users_on_remember_me_token"
+  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token"
+>>>>>>> 55ac9abb6d21265feb05f9791e7f7443386769fd
 
 end

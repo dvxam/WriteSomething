@@ -1,0 +1,15 @@
+<% @cadavres.each do |cadavre| %>
+	<h2><%= link_to cadavre.title, cadavre %></h2>
+	<p>
+		<%= cadavre.user.username %>
+		<% if cadavre.nb_max_of_sentences > cadavre.sentences.length %>
+			| <%= cadavre.sentences.length %> / <%= cadavre.nb_max_of_sentences %>
+		<% else %>
+		| Done!
+		<% end %>	
+	</p>
+	<p>
+	 <%= cadavre.sentences.last.content %>
+	</p>
+	<hr />
+<% end %>

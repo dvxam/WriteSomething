@@ -2,7 +2,11 @@ class User < ActiveRecord::Base
 <<<<<<< HEAD
   authenticates_with_sorcery!
 <<<<<<< HEAD
+<<<<<<< HEAD
   attr_accessible :username, :email, :password, :password_confirmation
+=======
+  attr_accessible :username, :email, :password, :password_confirmation, :score
+>>>>>>> 55ac9abb6d21265feb05f9791e7f7443386769fd
   
   has_many :sentences
   has_many :cadavres

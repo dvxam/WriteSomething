@@ -1,0 +1,23 @@
+<%= form_for(@sentence) do |f| %>
+  <% if @sentence.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sentence.errors.count, "error") %> prohibited this sentence from being saved:</h2>
+
+      <ul>
+      <% @sentence.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_field :content %>
+  </div>
+    <%= f.hidden_field :cadavre_id, :value => @cadavre.id %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
